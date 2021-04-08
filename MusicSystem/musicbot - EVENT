@@ -1,0 +1,11 @@
+{
+  "name": "musicbotevent",
+  "temp": "",
+  "event-type": "1",
+  "_id": "MSaQW",
+  "actions": [
+    {
+      "name": "Welcome"
+    }
+  ]
+}
