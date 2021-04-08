@@ -1,0 +1,129 @@
+{
+  "name": "graj",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "VUhaw",
+  "actions": [
+    {
+      "condition": "0",
+      "comparison": "3",
+      "value": "1",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "1",
+      "iffalseVal": "",
+      "name": "Check Parameters"
+    },
+    {
+      "info": "1",
+      "infoIndex": "1",
+      "storage": "1",
+      "varName": "title/link",
+      "name": "Store Command Params"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "🔎 **Proszę czekać wyszukuję...**\n",
+      "storage": "0",
+      "varName2": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    },
+    {
+      "token": "",
+      "user": "",
+      "pass": "",
+      "url": "https://www.googleapis.com/youtube/v3/search?maxResults=1&part=snippet&q=${tempVars(\"title/link\")}&key=TWOJ_API_KEY",
+      "path": "$.items[0].id.videoId",
+      "storage": "2",
+      "varName": "videoID",
+      "debugMode": "0",
+      "headers": "",
+      "reUse": "1",
+      "name": "Store Json From WebAPI"
+    },
+    {
+      "token": "",
+      "user": "",
+      "pass": "",
+      "url": "https://www.googleapis.com/youtube/v3/search?maxResults=1&part=snippet&q=${tempVars(\"title/link\")}&key= TWOJ_API_KEY",
+      "path": "$.items[0].snippet.title",
+      "storage": "2",
+      "varName": "videoTitle",
+      "debugMode": "0",
+      "headers": "",
+      "reUse": "1",
+      "name": "Store Json From WebAPI"
+    },
+    {
+      "token": "",
+      "user": "",
+      "pass": "",
+      "url": "https://www.googleapis.com/youtube/v3/search?maxResults=1&part=snippet&q=${tempVars(\"title/link\")}&key= TWOJ_API_KEY",
+      "path": "$.items[0].snippet.thumbnails.high.url",
+      "storage": "2",
+      "varName": "videoThumbnail",
+      "debugMode": "0",
+      "headers": "",
+      "reUse": "1",
+      "name": "Store Json From WebAPI"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "name": "Join Voice Channel"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=${serverVars(\"videoID\")}",
+      "seek": "0",
+      "volume": "100",
+      "passes": "1",
+      "bitrate": "144",
+      "type": "0",
+      "name": "Play YouTube Video"
+    },
+    {
+      "title": "▶️ Odtwarzanie/Kolejka",
+      "author": "",
+      "color": "#2cc961",
+      "url": "",
+      "authorIcon": "",
+      "authorUrl": "",
+      "imageUrl": "",
+      "thumbUrl": "${serverVars(\"videoThumbnail\")}",
+      "timestamp": "false",
+      "debug": "false",
+      "text": "",
+      "year": "",
+      "month": "",
+      "day": "",
+      "hour": "",
+      "minute": "",
+      "second": "",
+      "storage": "1",
+      "varName": "embed",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "message": "**${serverVars(\"videoTitle\")}**\n",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "channel": "0",
+      "varName2": "",
+      "storage3": "0",
+      "varName3": "nowplaying",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "messageContent": "",
+      "name": "Send Embed Message"
+    }
+  ],
+  "comType": "0"
+}
