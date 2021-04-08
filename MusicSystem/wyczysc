@@ -1,0 +1,82 @@
+{
+  "name": "wyczysc",
+  "permissions": "MOVE_MEMBERS",
+  "restriction": "1",
+  "_id": "XbNeV",
+  "actions": [
+    {
+      "member": "1",
+      "varName": "",
+      "info": "4",
+      "varName2": "",
+      "iftrue": "2",
+      "iftrueVal": "4",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check If Member"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "Musisz być na tym samym kanale co bot, żeby to użyć. ",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "status": "1",
+      "loop": "0",
+      "name": "Loop Queue"
+    },
+    {
+      "status": "1",
+      "loop": "1",
+      "name": "Loop Queue"
+    },
+    {
+      "name": "Clear Queue"
+    },
+    {
+      "title": "",
+      "author": "",
+      "color": "",
+      "url": "",
+      "authorIcon": "",
+      "authorUrl": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "timestamp": "true",
+      "debug": "false",
+      "text": "",
+      "year": "",
+      "month": "",
+      "day": "",
+      "hour": "",
+      "minute": "",
+      "second": "",
+      "storage": "1",
+      "varName": "embed",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "message": ":recycle: Kolejka zostala wyczyszczona!",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "channel": "0",
+      "varName2": "",
+      "name": "Send Embed Message"
+    }
+  ],
+  "_aliases": [
+    "clear"
+  ],
+  "comType": "0"
+}
