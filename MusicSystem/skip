@@ -1,0 +1,73 @@
+{
+  "name": "skip",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "OIivx",
+  "actions": [
+    {
+      "member": "1",
+      "varName": "",
+      "info": "4",
+      "varName2": "",
+      "iftrue": "2",
+      "iftrueVal": "4",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check If Member"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "Musisz być na tym samym kanale co bot, żeby to użyć. ",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "amount": "1",
+      "name": "Skip Queue"
+    },
+    {
+      "title": "",
+      "author": "",
+      "color": "#383038",
+      "url": "",
+      "authorIcon": "",
+      "authorUrl": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "timestamp": "true",
+      "debug": "false",
+      "text": "",
+      "year": "",
+      "month": "",
+      "day": "",
+      "hour": "",
+      "minute": "",
+      "second": "",
+      "storage": "1",
+      "varName": "embed",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "message": ":track_next: Wyjebales jedna piosenke z kolejki, szkoda, ze nie stara babe!",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "channel": "0",
+      "varName2": "",
+      "name": "Send Embed Message"
+    }
+  ],
+  "comType": "0",
+  "_aliases": [
+    "next"
+  ]
+}
