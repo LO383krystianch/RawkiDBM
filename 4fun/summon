@@ -1,0 +1,206 @@
+{
+  "name": "summon",
+  "permissions": "CREATE_INSTANT_INVITE",
+  "restriction": "1",
+  "_id": "XoTOM",
+  "actions": [
+    {
+      "info": "0",
+      "infoIndex": "1",
+      "storage": "1",
+      "varName": "nazwa",
+      "name": "Store Command Params"
+    },
+    {
+      "info": "1",
+      "infoIndex": "2",
+      "storage": "1",
+      "varName": "tresc",
+      "name": "Store Command Params"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "info": "16",
+      "storage": "1",
+      "varName2": "autoravatar",
+      "name": "Store Member Info"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "info": "0",
+      "storage": "1",
+      "varName2": "autor",
+      "name": "Store Member Info"
+    },
+    {
+      "member": "0",
+      "varName": "",
+      "info": "2",
+      "storage": "1",
+      "varName2": "nazwaa",
+      "name": "Store Member Info"
+    },
+    {
+      "member": "0",
+      "varName": "",
+      "info": "16",
+      "storage": "1",
+      "varName2": "mnazwa",
+      "name": "Store Member Info"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "info": "0",
+      "storage": "1",
+      "varName2": "kanal",
+      "name": "Store Channel Info"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "info": "0",
+      "storage": "1",
+      "varName2": "serwer",
+      "name": "Store Server Info"
+    },
+    {
+      "title": "SUMMON",
+      "author": "${tempVars(\"nazwaa\")}",
+      "color": "#ccc53b",
+      "url": "",
+      "authorIcon": "${tempVars(\"mnazwa\")}",
+      "authorUrl": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "timestamp": "false",
+      "debug": "false",
+      "text": "",
+      "year": "",
+      "month": "",
+      "day": "",
+      "hour": "",
+      "minute": "",
+      "second": "",
+      "storage": "1",
+      "varName": "emb1",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "emb1",
+      "message": "Wezwałeś użytkownika ${tempVars(\"nazwa\")}.\nZaraz zostanie on poinformowany",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "emb1",
+      "channel": "0",
+      "varName2": "",
+      "storage3": "0",
+      "varName3": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "messageContent": "",
+      "name": "Send Embed Message"
+    },
+    {
+      "channel": "2",
+      "varName": "",
+      "message": "${tempVars(\"nazwa\")}",
+      "storage": "0",
+      "varName2": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    },
+    {
+      "time": "3",
+      "measurement": "1",
+      "name": "Wait"
+    },
+    {
+      "channel": "2",
+      "varName": "",
+      "message": "${tempVars(\"nazwa\")}",
+      "storage": "0",
+      "varName2": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    },
+    {
+      "time": "3",
+      "measurement": "1",
+      "name": "Wait"
+    },
+    {
+      "channel": "2",
+      "varName": "",
+      "message": "${tempVars(\"nazwa\")}",
+      "storage": "0",
+      "varName2": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    },
+    {
+      "time": "3",
+      "measurement": "1",
+      "name": "Wait"
+    },
+    {
+      "channel": "2",
+      "varName": "",
+      "message": "${tempVars(\"nazwa\")}",
+      "storage": "0",
+      "varName2": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    },
+    {
+      "title": "SUMMON",
+      "author": "${tempVars(\"autor\")}",
+      "color": "#ccc53b",
+      "url": "",
+      "authorIcon": "${tempVars(\"autoravatar\")}",
+      "authorUrl": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "timestamp": "false",
+      "debug": "false",
+      "text": "",
+      "year": "",
+      "month": "",
+      "day": "",
+      "hour": "",
+      "minute": "",
+      "second": "",
+      "storage": "1",
+      "varName": "EMB2",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "EMB2",
+      "message": "Zostałeś wezwany przez: ${tempVars(\"autor\")},\nSerwer: ${tempVars(\"serwer\")}\nNazwa kanału: ${tempVars(\"kanal\")}\nPowód: ${tempVars(\"tresc\")}\nLepiej zjaw się szybko!",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "EMB2",
+      "channel": "2",
+      "varName2": "",
+      "storage3": "0",
+      "varName3": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "messageContent": "",
+      "name": "Send Embed Message"
+    }
+  ],
+  "comType": "0"
+}
