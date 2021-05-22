@@ -2,29 +2,44 @@
   "name": "graj",
   "permissions": "NONE",
   "restriction": "1",
-  "_id": "VUhaw",
+  "_id": "Dggap",
   "actions": [
     {
-      "condition": "0",
-      "comparison": "3",
-      "value": "1",
-      "iftrue": "0",
-      "iftrueVal": "",
-      "iffalse": "1",
+      "member": "1",
+      "varName": "",
+      "info": "4",
+      "varName2": "",
+      "iftrue": "2",
+      "iftrueVal": "4",
+      "iffalse": "0",
       "iffalseVal": "",
-      "name": "Check Parameters"
-    },
-    {
-      "info": "1",
-      "infoIndex": "1",
-      "storage": "1",
-      "varName": "title/link",
-      "name": "Store Command Params"
+      "name": "Check If Member"
     },
     {
       "channel": "0",
       "varName": "",
-      "message": "🔎 **Proszę czekać wyszukuję...**\n",
+      "message": "Musisz być na tym samym kanale co bot, żeby to użyć. ",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "condition": "0",
+      "comparison": "2",
+      "value": "0",
+      "iftrue": "3",
+      "iftrueVal": "2",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Parameters"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "${member} musisz podać tytuł piosenki! ❌",
       "storage": "0",
       "varName2": "",
       "iffalse": "0",
@@ -32,43 +47,24 @@
       "name": "Send Message"
     },
     {
-      "token": "",
-      "user": "",
-      "pass": "",
-      "url": "https://www.googleapis.com/youtube/v3/search?maxResults=1&part=snippet&q=${tempVars(\"title/link\")}&key=TWOJ_API_KEY",
-      "path": "$.items[0].id.videoId",
-      "storage": "2",
-      "varName": "videoID",
-      "debugMode": "0",
-      "headers": "",
-      "reUse": "1",
-      "name": "Store Json From WebAPI"
+      "name": "End Action Sequence"
     },
     {
-      "token": "",
-      "user": "",
-      "pass": "",
-      "url": "https://www.googleapis.com/youtube/v3/search?maxResults=1&part=snippet&q=${tempVars(\"title/link\")}&key= TWOJ_API_KEY",
-      "path": "$.items[0].snippet.title",
-      "storage": "2",
-      "varName": "videoTitle",
-      "debugMode": "0",
-      "headers": "",
-      "reUse": "1",
-      "name": "Store Json From WebAPI"
+      "info": "1",
+      "infoIndex": "1",
+      "storage": "1",
+      "varName": "search",
+      "name": "Store Command Params"
     },
     {
-      "token": "",
-      "user": "",
-      "pass": "",
-      "url": "https://www.googleapis.com/youtube/v3/search?maxResults=1&part=snippet&q=${tempVars(\"title/link\")}&key= TWOJ_API_KEY",
-      "path": "$.items[0].snippet.thumbnails.high.url",
-      "storage": "2",
-      "varName": "videoThumbnail",
-      "debugMode": "0",
-      "headers": "",
-      "reUse": "1",
-      "name": "Store Json From WebAPI"
+      "channel": "0",
+      "varName": "",
+      "message": "`Szukam 💤`",
+      "storage": "1",
+      "varName2": "do usu",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
     },
     {
       "channel": "0",
@@ -76,23 +72,184 @@
       "name": "Join Voice Channel"
     },
     {
-      "url": "https://www.youtube.com/watch?v=${serverVars(\"videoID\")}",
+      "token": "",
+      "user": "",
+      "pass": "",
+      "url": "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=5&q=${tempVars(\"search\")}&key=TWOJ_API_KEY",
+      "path": "items[0].snippet.channelTitle",
+      "storage": "1",
+      "varName": "channel",
+      "debugMode": "0",
+      "headers": "",
+      "reUse": "1",
+      "name": "Store Json From WebAPI"
+    },
+    {
+      "token": "",
+      "user": "",
+      "pass": "",
+      "url": "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=5&q=${tempVars(\"search\")}&key= TWOJ_API_KEY",
+      "path": "items[0].snippet.publishedAt",
+      "storage": "1",
+      "varName": "published",
+      "debugMode": "0",
+      "headers": "",
+      "reUse": "1",
+      "name": "Store Json From WebAPI"
+    },
+    {
+      "token": "",
+      "user": "",
+      "pass": "",
+      "url": "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=5&q=${tempVars(\"search\")}&key= TWOJ_API_KEY",
+      "path": "items[0].snippet.thumbnails.default.url",
+      "storage": "1",
+      "varName": "zdj",
+      "debugMode": "0",
+      "headers": "",
+      "reUse": "1",
+      "name": "Store Json From WebAPI"
+    },
+    {
+      "token": "",
+      "user": "",
+      "pass": "",
+      "url": "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=5&q=${tempVars(\"search\")}&key= TWOJ_API_KEY",
+      "path": "items[0].snippet.title",
+      "storage": "1",
+      "varName": "title",
+      "debugMode": "0",
+      "headers": "",
+      "reUse": "1",
+      "name": "Store Json From WebAPI"
+    },
+    {
+      "token": "",
+      "user": "",
+      "pass": "",
+      "url": "https://www.googleapis.com/youtube/v3/search?maxResults=1&part=snippet&q=${tempVars(\"search\")}&key= TWOJ_API_KEY",
+      "path": "items[0].id.videoId",
+      "storage": "1",
+      "varName": "url",
+      "debugMode": "0",
+      "headers": "",
+      "reUse": "1",
+      "name": "Store Json From WebAPI"
+    },
+    {
+      "token": "",
+      "user": "",
+      "pass": "",
+      "url": "https://www.googleapis.com/youtube/v3/videos?id=${tempVars(\"url\")}&part=statistics&key= TWOJ_API_KEY",
+      "path": "items[0].statistics.viewCount",
+      "storage": "1",
+      "varName": "view",
+      "debugMode": "0",
+      "headers": "",
+      "reUse": "1",
+      "name": "Store Json From WebAPI"
+    },
+    {
+      "token": "",
+      "user": "",
+      "pass": "",
+      "url": "https://www.googleapis.com/youtube/v3/videos?id=${tempVars(\"url\")}&part=statistics&key= TWOJ_API_KEY",
+      "path": "items[0].statistics.likeCount",
+      "storage": "1",
+      "varName": "like",
+      "debugMode": "0",
+      "headers": "",
+      "reUse": "1",
+      "name": "Store Json From WebAPI"
+    },
+    {
+      "token": "",
+      "user": "",
+      "pass": "",
+      "url": "https://www.googleapis.com/youtube/v3/videos?id=${tempVars(\"url\")}&part=statistics&key= TWOJ_API_KEY",
+      "path": "items[0].statistics.dislikeCount",
+      "storage": "1",
+      "varName": "dis",
+      "debugMode": "0",
+      "headers": "",
+      "reUse": "1",
+      "name": "Store Json From WebAPI"
+    },
+    {
+      "time": "${tempVars(\"published\")}",
+      "storage": "1",
+      "varName": "czas",
+      "name": "Convert Timestamp to Date"
+    },
+    {
+      "date": "${tempVars(\"czas\")}",
+      "info": "4",
+      "storage": "1",
+      "varName": "dzien",
+      "name": "Store Date Info"
+    },
+    {
+      "date": "${tempVars(\"czas\")}",
+      "info": "8",
+      "storage": "1",
+      "varName": "miesiac",
+      "name": "Store Date Info"
+    },
+    {
+      "date": "${tempVars(\"czas\")}",
+      "info": "5",
+      "storage": "1",
+      "varName": "rok",
+      "name": "Store Date Info"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=${tempVars(\"url\")}",
       "seek": "0",
-      "volume": "100",
+      "volume": "",
       "passes": "1",
-      "bitrate": "144",
+      "bitrate": "",
       "type": "0",
       "name": "Play YouTube Video"
     },
     {
-      "title": "▶️ Odtwarzanie/Kolejka",
+      "member": "1",
+      "varName": "",
+      "info": "16",
+      "storage": "1",
+      "varName2": "avatar",
+      "name": "Store Member Info"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "info": "3",
+      "storage": "1",
+      "varName2": "nazwa",
+      "name": "Store Member Info"
+    },
+    {
+      "server": "0",
+      "info": "5",
+      "storage": "1",
+      "varName": "kolejka",
+      "varName2": "",
+      "name": "Store Audio Info"
+    },
+    {
+      "storage": "1",
+      "varName": "do usu",
+      "reason": "",
+      "name": "Delete Message"
+    },
+    {
+      "title": "▶️ Gram",
       "author": "",
-      "color": "#2cc961",
+      "color": "#371278",
       "url": "",
       "authorIcon": "",
       "authorUrl": "",
       "imageUrl": "",
-      "thumbUrl": "${serverVars(\"videoThumbnail\")}",
+      "thumbUrl": "${tempVars(\"zdj\")}",
       "timestamp": "false",
       "debug": "false",
       "text": "",
@@ -109,8 +266,65 @@
     {
       "storage": "1",
       "varName": "embed",
-      "message": "**${serverVars(\"videoTitle\")}**\n",
-      "name": "Set Embed Description"
+      "fieldName": "Tytuł:",
+      "message": "`${tempVars(\"title\")}`",
+      "inline": "1",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "fieldName": "Kanał:",
+      "message": "`${tempVars(\"channel\")}`",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "fieldName": "Opublikowano:",
+      "message": "`${tempVars(\"dzien\")}.${tempVars(\"miesiac\")}.${tempVars(\"rok\")}r.`",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "fieldName": "Wyświetleń:",
+      "message": "`${tempVars(\"view\")}`",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "fieldName": "Pozycja w kolejce:",
+      "message": "`${tempVars(\"kolejka\")}`",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "fieldName": "👍:",
+      "message": "`${tempVars(\"like\")}`",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "fieldName": "👎:",
+      "message": "`${tempVars(\"dis\")}`",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "message": "Dodane przez: ${tempVars(\"nazwa\")}",
+      "footerIcon": "${tempVars(\"avatar\")}",
+      "name": "Set Embed Footer"
     },
     {
       "storage": "1",
@@ -118,12 +332,15 @@
       "channel": "0",
       "varName2": "",
       "storage3": "0",
-      "varName3": "nowplaying",
+      "varName3": "",
       "iffalse": "0",
       "iffalseVal": "",
       "messageContent": "",
       "name": "Send Embed Message"
     }
   ],
-  "comType": "0"
+  "_aliases": [
+    "p",
+    "play"
+  ]
 }
