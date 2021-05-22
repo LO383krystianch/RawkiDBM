@@ -27,6 +27,22 @@
       "name": "End Action Sequence"
     },
     {
+      "member": "1",
+      "varName": "",
+      "info": "16",
+      "storage": "1",
+      "varName2": "avatar",
+      "name": "Store Member Info"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "info": "21",
+      "storage": "1",
+      "varName2": "tag",
+      "name": "Store Member Info"
+    },
+    {
       "status": "1",
       "loop": "0",
       "name": "Loop Queue"
@@ -63,6 +79,13 @@
       "varName": "emb",
       "message": "Zakończono pętle ",
       "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "emb",
+      "message": "Wykonane przez: ${tempVars(\"tag\")}",
+      "footerIcon": "${tempVars(\"avatar\")}",
+      "name": "Set Embed Footer"
     },
     {
       "storage": "1",
