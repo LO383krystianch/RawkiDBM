@@ -1,6 +1,6 @@
 ## Wersje:
 * - 1.0 - dodano,
-* - 1.1 - doddano kilka poprawek,
+* - 1.1 - dodano kilka poprawek,
 * - 2.0 - przebudowano wiele komend.
 ## Wymagania:
 * - MODY (https://dbm-network.github.io)
