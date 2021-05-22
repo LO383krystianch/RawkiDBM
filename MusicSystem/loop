@@ -32,6 +32,22 @@
       "name": "Loop Queue"
     },
     {
+      "member": "1",
+      "varName": "",
+      "info": "16",
+      "storage": "1",
+      "varName2": "avatar",
+      "name": "Store Member Info"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "info": "21",
+      "storage": "1",
+      "varName2": "tag",
+      "name": "Store Member Info"
+    },
+    {
       "title": "🔄 Powtarzanie piosenek",
       "author": "",
       "color": "#6b3deb",
@@ -58,6 +74,13 @@
       "varName": "emb",
       "message": "Powtarzasz piosenkę: ${serverVars(\"videoTitle\")} 🎶",
       "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "emb",
+      "message": "Wykonane przez: ${tempVars(\"tag\")}",
+      "footerIcon": "${tempVars(\"avatar\")}",
+      "name": "Set Embed Footer"
     },
     {
       "storage": "1",
