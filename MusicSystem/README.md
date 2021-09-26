@@ -9,4 +9,5 @@
 * - @discordjs/opus >= 0.3.2
 * - ytdl-core >= 3.1.2
 * - Dodanie klucza api w komendzie graj (akcja od 10 do 17)
-w razie problemów zapraszam do kontaktu na dc: ( ͡°( ͡° ͜ʖ( ͡° ͜ʖ ͡°)ʖ ͡°) ͡°)#2137
+w razie problemów zapraszam do kontaktu na dc: ( ͡°( ͡° ͜ʖ( ͡° ͜ʖ ͡°)ʖ ͡°) ͡°)#6209
+
